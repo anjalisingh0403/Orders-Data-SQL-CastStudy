@@ -38,10 +38,5 @@ limit 3);
 select order_id, order_date from orders_data
 where order_date between '2018-06-09' and '2019-10-11' ; 
 
--- total sales of return orders 
 
-with cte as(
-select order_id, sales from orders_data where order_id in (select order_id from returns_data))
-select sum(sales) as returns_sale from cte;
 
--- give all the data which was not returned
